@@ -1,0 +1,299 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("maria2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.caja {
+    padding: 15px;
+    height: 450px;
+    width: 400px;
+    background: linear-gradient(white, transparent);
+    margin: auto;
+    border-top: 6px solid #0007;
+    box-shadow: 0 0 45px 0 #0007;
+    border-radius: 20px;
+    max-width: 95vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    margin-top: 15px;
+    text-shadow: 0 0 5px #000;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 0 5px black;
+    font-size: 1.2rem;
+}
+h3{
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 0 5px black;
+    font-size: 1.5rem;
+}
+p{
+    font-family: sans-serif;
+    color: #000;
+    text-align: center;
+    text-shadow: 0 0 5px black;
+    font-size: 0.9rem;
+}
+
+.flor img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    background-size: 100%;
+    margin: auto;
+}
+
+.boton1, .boton2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flower-btn,
+.flower-maria {
+    margin: auto;
+    width: 150px;
+    max-width: 80vw;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    color: #fff;
+    background: linear-gradient(45deg, #ffbb00, #ff5e00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 999;
+    margin: 10px 0;
+}
+
+/* Overlay para el modal */
+.ventanita {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 235, 59, 0.30);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El cuadro del modal */
+.ventanita-contenido {
+    background: #fffde7;
+    border: 2px solid #fbc02d;
+    box-shadow: 0 0 50px #fbc02d80;
+    border-radius: 16px;
+    min-width: 320px;
+    max-width: 90vw;
+    min-height: 200px;
+    max-height: 80vh;
+    padding: 30px 20px 20px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.ventanita-contenido::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.7);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.ventanita-contenido > * {
+    position: relative;
+    z-index: 1;
+}
+
+.cerrarbtn, .cerrar {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fbc02d;
+    font-weight: bold;
+    z-index: 2;
+    background: none;
+    border: none;
+}
+
+.ramo{
+    width: 320px;
+    max-width: 95vw;
+}
+
+.flor-lluvia {
+    position: fixed;
+    top: -80px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 0.2s;
+    animation: caer 15s linear forwards;
+}
+
+@keyframes caer {
+    to {
+        top: 100vh;
+        transform: rotate(360deg) scale(1.2);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .caja {
+        width: 90vw;
+        height: auto;
+        min-height: 320px;
+        max-height: 90vh;
+        padding: 10px;
+        border-radius: 18px;
+        box-shadow: 0 0 20px 0 #0006;
+    }
+    .ramo {
+        width: 90vw;
+        max-width: 300px;
+    }
+    h1 {
+        font-size: 1.7rem;
+        margin-top: 10px;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+        margin-top: 6px;
+    }
+    .flor img {
+        height: 70px;
+        width: 70px;
+    }
+    .flower-btn,
+    .flower-maria {
+        width: 100%;
+        max-width: 95vw;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .caja {
+        width: 99vw;
+        min-height: 200px;
+        padding: 6vw 2vw;
+        border-radius: 12px;
+        box-shadow: 0 0 16px 0 #0004;
+    }
+    .ramo {
+        width: 99vw;
+        max-width: 200px;
+    }
+    h1 {
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+    h2 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    h3 {
+        font-size: 1rem;
+        margin-top: 4px;
+    }
+    .flor img {
+        height: 35vw;
+        max-height: 60px;
+        width: 35vw;
+        max-width: 60px;
+    }
+    .flower-btn,
+    .flower-maria {
+        width: 100%;
+        max-width: 99vw;
+        font-size: 0.95rem;
+        padding: 8px 0;
+    }
+    .ventanita-contenido {
+        min-width: 90vw;
+        max-width: 99vw;
+        min-height: 90px;
+        max-height: 90vh;
+        padding: 8vw 4vw;
+        border-radius: 8px;
+    }
+    .cerrarbtn, .cerrar {
+        font-size: 2.2rem;
+        top: 2vw;
+        right: 4vw;
+    }
+    .flor-lluvia {
+        width: 20vw;
+        max-width: 30px;
+        height: 20vw;
+        max-height: 30px;
+    }
+    p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra: mejor scroll para modales en móvil */
+.ventanita-contenido {
+    scrollbar-width: thin;
+    scrollbar-color: #fbc02d #fffde7;
+}
+.ventanita-contenido::-webkit-scrollbar {
+    width: 4px;
+    background: #fffde7;
+}
+.ventanita-contenido::-webkit-scrollbar-thumb {
+    background: #fbc02d;
+    border-radius: 2px;
+}

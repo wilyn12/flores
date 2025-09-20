@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-image: url(maria.jpg);
+    background-size: cover;       /* Hace que la imagen cubra todo el área disponible */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 150vh;
+    max-width: 300px;
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff9;
+    border-radius: 10px;
+    box-shadow: 0 0 35px 0 #000;
+}
+
+.container h2 {
+    font-size: 1.7rem;
+}
+
+.input-display {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+    letter-spacing: 8px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.keypad button {
+    padding: 10x;
+    font-size: 25px;
+    background: linear-gradient(45deg, #ff09, #f509);
+    border: 1px black solid;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 10px;
+    box-shadow: 0 0 12px 0 #000;
+}
+
+.key:hover {
+    background-color: #fff;
+    color: #ff5e00;
+}
+
+.keypad button:last-child {
+    grid-column: 2/3;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .container h2 {
+        font-size: 1.2rem;
+    }
+
+    .input-display {
+        font-size: 22px;
+        letter-spacing: 4px;
+    }
+
+    .keypad button {
+        font-size: 18px;
+        padding: 10px;
+    }
+}
